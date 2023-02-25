@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+{% comment %} <!-- Created By CodingLab - www.codinglabweb.com --> {% endcomment %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive Registration Form | CodingLab </title>
+    <link rel="stylesheet" href="{% static '/regis.css'%}">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>    
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form action="{% url 'registration' %}" method="post">
+        {% csrf_token %}
+        {% comment %} {{form }} {% endcomment %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            {% comment %} <input type="text" name="fullname" placeholder="Enter your name" required> {% endcomment %}
+            {{form.fullname}}
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            {% comment %} <input type="text" name="username" placeholder="Enter your username" required> {% endcomment %}
+            {{form.username}}
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            {% comment %} <input type="text" name="email" placeholder="Enter your email" required> {% endcomment %}
+            {{form.email}}
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            {% comment %} <input type="number" name="phonenumber" placeholder="Enter your number" required> {% endcomment %}
+            {{form.phonenumber}}
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            {% comment %} <input type="password" name="password1" placeholder="Enter your password" required> {% endcomment %}
+            {{form.password1}}
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            {% comment %} <input type="password" name="password2" placeholder="Confirm your password" required> {% endcomment %}
+            {{form.password2}}
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+
+    var form_fields = document.getElementByTagName('input')
+    form_firlss[1].placeholder='Full Name'
+
+
+    for (var field in form_fields){
+        form_fields[field].classname += ''
+    }
+  </script>
+
+</body>
+</html>
